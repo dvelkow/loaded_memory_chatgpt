@@ -3,7 +3,7 @@ import openai
 from typing import List, Dict, Any
 
 # IMPORTANT: Replace this with your actual API key or use an environment variable
-OPENAI_API_KEY = "insert_key_here"
+OPENAI_API_KEY = "api_key_placeholder"
 
 # Name of the knowledge base file in the same directory
 KNOWLEDGE_BASE_FILE = "knowledge_base.txt"
@@ -52,7 +52,7 @@ def get_ai_response(messages: List[Dict[str, Any]]) -> str:
         return "I'm sorry, I encountered an error while processing your request."
 
 def chatbot(knowledge_base: str) -> None:
-    """Run the chatbot."""
+    """Basically the prompt that is sent to chatgpt."""
     system_message = f"""You are a helpful assistant. Your knowledge comes from the following text:
 
 {knowledge_base}
@@ -73,7 +73,6 @@ If you don't find relevant information in your knowledge base to answer a questi
         print(f"Chatbot: {ai_response}")
 
 def main() -> None:
-    """Main function to run the program."""
     try:
         setup_openai_api()
         
